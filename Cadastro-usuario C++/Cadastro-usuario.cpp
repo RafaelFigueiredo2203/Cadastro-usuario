@@ -9,9 +9,9 @@ using namespace std;
 	int opcao;
 	char nome[50];
 	char tel[40];
+	voltainicio:
 	
-	
-	printf ("\n Bem-Vindo \n\n");
+	printf ("\n\n Bem-Vindo \n\n");
 	printf ("1)Cadastro.");
 	printf ("\n2)Ajuda.");
 	printf ("\n3)Sair.");
@@ -22,8 +22,10 @@ using namespace std;
 
 
 	if(opcao){
-	
-	
+	if (opcao > 3){
+	printf ("\nErro , opção não encontrada.");
+	goto voltainicio;
+}
 	 if(opcao == 2){
 		printf ("\nAjuda:");
 		printf ("\nDigite o o número referente a opção desejada , exemplo:");
@@ -49,13 +51,18 @@ using namespace std;
 		printf ("\n Erro campo não preenchido.");
 		goto REFAZ1;
 	}
+	printf ("\n\n\nCadastro realizado com sucesso, muito obrigado!!");
+
+	goto voltainicio;
 }
-	else if (opcao == 3){
+	switch(opcao){
+		case 3:
 	
 		printf ("\nEscolheu sair, até a próxima!");
-		
+		break;
 	}
+
 }
-printf ("\n\nCadastro realizado com sucesso, muito obrigado!!");
+
 	return 0;
 }
